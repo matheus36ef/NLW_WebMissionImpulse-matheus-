@@ -3,20 +3,25 @@ import { api } from '../services/api';
 
 // Tipagens 
 // Dados que vamos ter dentro desse contexto
+
 type User = {
     id: string;
     name: string;
     login: string;
     avatar_url: string;
 }
-type AuthContextData = {
+
+type AuthContextData = { // Aqui falamos que tipo de dados o contexto retorna.
     user: User | null;
     signInUrl: string;
+    signOut: () => void; // estamos declarando que signOut é uma função, com (vazio) pois não estamos passando nenhum argumento. e falamos que é um void pois não retorna nada.
 
 }
+
 type AuthProvider = {
     children: ReactNode;
 }
+
 type authResponse = {
     token: string;
     user : {
@@ -33,8 +38,6 @@ type authResponse = {
 // Fazendo asism, quando eu for passar pro value no AuthContext.Provider [a baixo] eu vou saber oque ele esta passando.
 // No mesmo vamos receber desta forma: <AuthContext.Provider value={ {} }> a primeira chave quer dizer que é um informação JS, a segunda quer dizer que essa informação é um objeto.
 export const AuthContext = createContext({} as AuthContextData);
-
-
 
 export function AuthProvider(props: AuthProvider) {
     const [user, setUser] = useState<User | null>(null);
@@ -63,6 +66,25 @@ export function AuthProvider(props: AuthProvider) {
             localStorage.setItem('@dowhile:token', token);
             setUser(user);
         }
+
+        useEffect(( ) => { // Pegando o token que está no localStorage e utilizando ele para login.
+            const token = localStorage.getItem('@dowhile:token');
+
+            if(token) {
+                // Aqui estamos passando o token no cabeçalho da requisição.
+                api.defaults.headers.common.authorization = `Bearer ${token}`;
+
+                api.get<User>('profile').then(response => {
+                    setUser(response.data);
+                })
+            }
+        }, []);
+
+        function signOut() {
+            setUser(null);localStorage.removeItem('@dowhile:token');
+        }
+
+
         useEffect(() => { // Executado primeiro
             const url = window.location.href; // Estamos buscando a url da aplicação.
             const hasGithubCode = url.includes('?code=');
@@ -78,7 +100,7 @@ export function AuthProvider(props: AuthProvider) {
             }
         }, []) // o Arrei vazio fala que queremos executar uma unica vez assim que passar por aqui.
     return (
-            <AuthContext.Provider value={ {signInUrl, user} }>
+            <AuthContext.Provider value={ {signInUrl, user, signOut} }>
             {/* O provider, é um componente que faz com que, todos os componentes que estiverem dentro desse AuthProvider, 
                 tenho acesso as informações de contexto. 
                 ex: Se dentro desse contexto eu colocar uma informação, que o usuario está logado ou não. Todos os componentes que estiverem 
