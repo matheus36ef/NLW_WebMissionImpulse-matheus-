@@ -62,9 +62,14 @@ export function AuthProvider(props: AuthProvider) {
     
             // Tratando os dados recebidos do back-end
             const {token, user} = response.data;
-    
+
+            
             localStorage.setItem('@dowhile:token', token);
             setUser(user);
+            
+            
+            // Aqui estamos passando o token no cabeçalho da requisição.
+            api.defaults.headers.common.authorization = `Bearer ${token}`;
         }
 
         useEffect(( ) => { // Pegando o token que está no localStorage e utilizando ele para login.
