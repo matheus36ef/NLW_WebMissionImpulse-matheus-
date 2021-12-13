@@ -1,14 +1,16 @@
 <h1> Descrição </h1>
 Essa aplicação é sobre um evento que ja ocorreu da rocketseat, onde usuarios autenticados atraves do
 github pudessem enviar mensagens sobre o evento. As mensagens são atualizadas em tempo real, e podem ser enviadas
-pela WEB e por um app mobile.
+pela WEB e por um app mobile. 
+As mensagens são salvas em banco de dados Utilizando o prisma e SQLite.
 
 <h2> Link da aplicação hospedada no Vercel </h2>
 - 
 
 
-<h3> Dados do desenvolvimento </h3>
+<h3> Dados do desenvolvimento do Front-end </h3>
 Essa é a parte Front-end do projeto.
+O servidor a parte esta sendo rodado na Vercek.
 
 
 - Utilizando o vite como construtor do React.
