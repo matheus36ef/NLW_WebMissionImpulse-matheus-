@@ -16,9 +16,8 @@ import styles from './styles.module.scss';
 export function LoginBox(){
     /* Logica de login feita em src/contexts/auth.tsx */
 
-    const {signInUrl, user} = useContext(AuthContext);
-    console.log(user);
-
+    const {signInUrl} = useContext(AuthContext);
+    
     return (
         <div className={styles.loginBoxWrapper}>
             <strong>Entre e compartilhe sua mensagem</strong>
