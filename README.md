@@ -11,8 +11,9 @@ As mensagens são salvas em banco de dados utilizando o prisma e SQLite.
 1 - Clone os dois repositórios. </br>
    - front-end -> https://bityli.com/ViErLXX </br>
    - back-end  -> https://tinyurl.com/2p9x4524
-
+</br>
 2 - Back-end
+
  2.1 Instale as dependências usando yarn ou npm.
  
  2.2 - Você vai precisar criar três variáveis de ambiente
@@ -33,7 +34,7 @@ As mensagens são salvas em banco de dados utilizando o prisma e SQLite.
 
  2.4 - Banco de dados:  Você pode executar o comando yarn prisma studio para ver a interface do banco de dados.
 
-3 - Front-end
+3 - Front-end</br>
  3.1 - Instale as dependências usando yarn ou npm.
 
  3.2 Vai precisar das mesmas variáveis do back-end (2.2).
@@ -45,11 +46,11 @@ As mensagens são salvas em banco de dados utilizando o prisma e SQLite.
     Pronto você agora a aplicação está funcional.
 
 <h3> Mobile </h3>
-- Aplicação para mobile ainda não finalizada.
+- Aplicação mobile ainda não finalizada.
 
 <h3> Dados do desenvolvimento do Front-end </h3>
 Essa é a parte Front-end do projeto.
-O servidor a parte está sendo rodado na Vercek.
+O servidor a parte está sendo rodado no Vercel. (Ainda não ligado)
 
 - Utilizando o vite como construtor do React.
 - Utilizando o (CSS Mocules) e (SCSS)
