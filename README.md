@@ -8,9 +8,9 @@ As mensagens são salvas em banco de dados utilizando o prisma e SQLite.
 - Ainda não o fiz, mas você pode clonar os dois repositórios e executar o servidor na sua máquina.
 
 <h4> Instruções </h4>
-1 - Clone os dois repositórios.
- front-end -> https://bityli.com/ViErLXX
- back-end  -> https://tinyurl.com/2p9x4524
+1 - Clone os dois repositórios. </br>
+   - front-end -> https://bityli.com/ViErLXX </br>
+   - back-end  -> https://tinyurl.com/2p9x4524
 
 2 - Back-end
  2.1 Instale as dependências usando yarn ou npm.
@@ -59,12 +59,14 @@ O servidor a parte está sendo rodado na Vercek.
 Existem as partes (Back-end e mobile).
 links:
 
-Front - end: https://bityli.com/ViErLXX
-Back - end : https://tinyurl.com/2p9x4524
-mobile:      https://tinyurl.com/yckrw82r
+Front - end: https://bityli.com/ViErLXX </br>
+Back - end : https://tinyurl.com/2p9x4524 </br>
+mobile:      https://tinyurl.com/yckrw82r </br>
 
 <h2>Apresentações</h2>
+
 ![image](https://user-images.githubusercontent.com/54918988/146004952-0991aa3f-6293-433c-b43b-4c0052cea9b3.png)
+
 ![image](https://user-images.githubusercontent.com/54918988/146004921-c465f830-9963-43c5-aae9-60f11068f80c.png)
 
 https://drive.google.com/file/d/1KDEhHlAvH6ECbYXBAooHXSMvBqsgDDfp/view?usp=sharing
