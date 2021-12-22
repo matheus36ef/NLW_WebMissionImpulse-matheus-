@@ -9,8 +9,6 @@ import logoImg from '../../assets/logo.svg';
 
 import io from 'socket.io-client';
 
-
-
 type Message = {
     id: string;
     text: string;
